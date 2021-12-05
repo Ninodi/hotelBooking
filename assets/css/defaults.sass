@@ -1,0 +1,60 @@
+
+@mixin spacebtw() 
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+
+@mixin column()
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+@mixin center()
+    display: flex
+    justify-content: center
+    align-items: center   
+    
+    
+@mixin max1600()
+    @media screen and (max-width: 1600px)
+        @content
+
+@mixin max1100()
+    @media screen and (max-width: 1100px)
+        @content
+
+@mixin max1024()
+    @media screen and (max-width: 1024px)
+        @content
+
+@mixin max950()
+    @media screen and (max-width: 950px)
+        @content
+
+@mixin max850()
+    @media screen and ( max-width: 850px )
+        @content
+    
+@mixin max760()
+    @media screen and (max-width: 760px)
+        @content
+@mixin max615()
+    @media screen and ( max-width: 615px )
+        @content
+    
+@mixin max550()
+    @media screen and (max-width: 550px)
+        @content
+
+@mixin max485()
+    @media screen and (max-width: 485px)
+        @content
+
+@mixin max450()
+    @media screen and (max-width: 450px)
+        @content
+
+@mixin max375()
+    @media screen and (max-width: 375px)
+        @content
