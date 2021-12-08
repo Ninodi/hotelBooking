@@ -7,59 +7,24 @@
     list-style: none
     text-decoration: none
     box-sizing: border-box
+    font-family: sans-serif
 
+// --------------- header-----------------
 
-header
-    width: 9%
-    height: 100vh
-    position: fixed
-    top: 0
-    left: 0
-    display: flex
-    flex-direction: column
-    background-color: #2D3DDF
-    border-radius: 0 39px 39px 0
-    @include max1600()
-        justify-content: space-around
-        width: 8%
+@import header
 
-nav
-    width: 100%
-    height: 45%
-    @include max1600()
-        height: calc( 100% - 180px )
-    ul
-        height: 100%
-        display: flex
-        flex-direction: column
-        align-items: center
-        justify-content: space-around
-    li
-        width: 68px
-        height: 68px
-        @include center()
-        flex-direction: column
-        border-radius: 50%
-        transition: all 0.2s ease-in
-        cursor: pointer
-        &:hover
-            background-color: #EFEEEE
-            svg path, svg ellipse, svg circle, svg line
-                stroke: #2C3CDE
-            a
-                color: #2C3CDE
-        a
-            color: #fff
+body
+    &.fullScreen
+        .searchSection,
+            padding-right: 1%
+        .tourSec
+            right: -50%
+        .openRecom
+            display: flex
+        .footerContainer
+            padding-right: 0
 
-.logo
-    height: 40px
-    width: 100%
-    margin-top: 42px
-    margin-bottom: 200px
-    @include max1600()
-        margin-bottom: 0px
-    @include center()
-    
+// --------------- main-----------------
 main
     width: 100%
     height: 100%
@@ -67,15 +32,15 @@ main
 .searchSection
     width: 100%
     height: 100%
-    // background-color: blue
     padding-right: 45%
     padding-left: 9%
     border-top-right-radius: 10%
     transition: all 0.4s ease-in
-    &.fullScreen
-        padding-right: 3%
     @include max1600()
         padding-left: 8%
+    @include max1100()
+        padding-right: 0
+        padding-left: 0
 
 .searchSecContainer
     width: 100%
@@ -91,6 +56,8 @@ main
     border-radius: 10px
     overflow: hidden
     margin-bottom: 50px
+    @include max1100()
+        width: calc( 100% - 60px )
     input
         width: 100%
         height: 100%
@@ -107,15 +74,20 @@ main
     @include spacebtw()
     align-items: end
     margin-bottom: 12px
+    @include max1100()
+        width: calc( 100% - 60px )
     h2
         font-size: 20px
         color: #221F3C
+        @include max1100()
+            font-size: 22px      
     a
         font-size: 20px
         color: #2D3DDF
+        @include max1100()
+            font-size: 22px   
 
 .popularSwiper
-    // background-color: red
     width: 100%
     height: max-content
     margin-bottom: 50px
@@ -165,9 +137,9 @@ main
 
 .heartReact
     position: absolute
-    top: 10px
-    left: 10px
-    transform: scale(1.3)
+    top: 15px
+    left: 15px
+    transform: scale(1.6)
     cursor: pointer
     path
         fill: #F5B7B1
@@ -177,22 +149,21 @@ main
         path
             fill: red
 
-// .swiper-slide
-//     width: 214px 
-//     height: 208px 
-//     position: relative
+
 
 .swiperSlide
     width: 100%
     height: 100%
-    // @include max1600()
-    //     width: 200px
-    //     height: 180px
+
+
     
 .mySwiper
     width: calc( 100% - 80px )
     height: 200px
     margin-left: 30px !important
+    @include max1100()
+        width: calc( 100% - 60px )
+        height: 300px !important
 
 .swiper-wrapper
     width: 100%
@@ -222,16 +193,35 @@ main
     padding-right: 50px
     justify-content: space-between
     display: flex
+    @include max615()
+        flex-direction: column
+    @include max1100()
+        padding-right: 30px
 
 .dealsItem
     width: 48%
-    height: 210px
+    height: 200px
     object-fit: cover
     position: relative
     border-radius: 8px
     overflow: hidden
+    &:first-child, &:nth-child(2)       
+        @include max615()
+            margin-bottom: 15px
     @include max1600()
         height: 180px
+    @include max1100()
+        height: 250px
+        width: 49% !important 
+    @include max615()
+        width: 100% !important
+        height: 300px !important
+    &:nth-child(3)
+        display: none 
+        @include max1100()
+            display: none !important
+        @include max615()
+            display: unset      
     img
         width: 100%
         height: 100%
@@ -254,9 +244,15 @@ main
     background-color: #111
     opacity: 0.5
     transition: all 0.3s linear
+    @include max1100()
+        height: 150px
+    @include max615()
+        height: 200px
     span
         margin-bottom: 10px
-        color: #fff           
+        color: #fff   
+        @include max1100()
+            font-size: 22px        
         &:first-child
             font-weight: 600
         &:last-child
@@ -272,24 +268,41 @@ main
     height: 100%
     padding-left: 30px
     padding-right: 50px
+    @include max1100()
+        padding-right: 30px
 
 .galleryGrid
     width: 100%
     height: 100%
     display: grid
-    grid-template-columns: 1fr 1fr 1fr
+    grid-template-columns: 1fr 1fr
     grid-gap: 20px
-    @include max1600()
-        grid-template-columns: 1fr 1fr
+    @include max1100()
+        grid-template-columns: 1fr 1fr !important
+    @include max615()
+        grid-template-columns: 1fr !important
     
 
 .gridItem
     width: 100%
     height: 100%
+    height: 200px
     overflow: hidden
     border-radius: 4px
+    &:hover
+        img
+            transform: scale(1.2)
+        .imgTxtBack
+            background-color: #fff
+        .imgTxt
+            color: #111
+
     @include max1600()
         height: 150px
+    @include max1100()
+        height: 250px
+    @include max615()
+        height: 300px
     a
         width: 100%
         height: 100%
@@ -297,22 +310,9 @@ main
     img
         width: 100%
         height: 100%
-    &:nth-child(3)
-        // height: calc( 100% - 20px )
-        height: auto
-        grid-column: 3 / span 1
-        grid-row: 1 / span 2
-        @include max1600()
-            display: none
-    &:nth-child(6), &:nth-child(7)    
-        display: none
-        @include max1600()
-            display: unset
+        transition: all 0.3s ease-in
         
 
-        
-// header
-//     display: none
 
 .tourSec
     width: 43%
@@ -330,19 +330,17 @@ main
     background-repeat: no-repeat
     overflow: hidden
     transition: all 0.4s ease-in
+    @include max1100()
+        display: none
     &::after
         content: ''
         width: 100%
         height: 100%
         position: absolute
-        // background: rgb(255,255,255)
-        // background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(82,98,236,1) 100%)
         background-color: #2D3DDF
         opacity: 0.5
         z-index: -1
         pointer-events: none
-    &.fullScreen
-        right: -50%
 
 .userContainer
     width: 310px
@@ -406,7 +404,6 @@ main
     width: 100%
     height: max-content
     margin-left: 50px
-    // margin-bottom: 60px
     h1,p, .takeTour
         color: #fff
     p
@@ -421,7 +418,6 @@ main
 .takeTour
     width: 150px
     height: 60px
-    // background-color: red
     border-radius: 4px
     position: relative
     overflow: hidden
@@ -434,7 +430,6 @@ main
             color: #111
     @include max1600()
         height: 50px
-        // width: 80px
 
 .takeTourBack
     width: 100%
@@ -467,7 +462,6 @@ main
     display: flex
     justify-content: center
     align-items: center
-    // background-color: red
     border: 1px solid #fff
     border-radius: 50%
     position: absolute
@@ -482,8 +476,6 @@ main
     svg
         transform: scale(1.3)
 
-// .tourSec
-//     display: none
 
 .openRecom
     width: 80px
@@ -500,5 +492,11 @@ main
     align-items: center
     display: none
     cursor: pointer
-    &.fullScreen
-        display: flex
+    @include max1100()
+        display: none !important
+
+
+// -----------------footer-------------------
+
+@import footer
+

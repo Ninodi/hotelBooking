@@ -1,17 +1,22 @@
+let body = document.querySelector('body')
 let heartReact = document.querySelectorAll(".heartReact svg path")
-let searchSection = document.querySelector('.searchSection')
-let tourSec = document.querySelector('.tourSec')
 let closeArrow = document.querySelector('.closeArrow')
 let openRecom = document.querySelector('.openRecom')
 let galleryGrid = document.querySelector('.galleryGrid')
 let gridItem = document.querySelectorAll(".gridItem")
+let dealsItem = document.querySelectorAll(".dealsItem")
+let dealsItem3 = document.querySelector(".dealsItem:nth-child(3)")
+let mySwiper = document.querySelector('.mySwiper')
 let swiper
 
 
 swiper = new Swiper(".mySwiper", {
-    slidesPerView: 2,
+    slidesPerView: 1,
     spaceBetween: 20,
     breakpoints:{
+        615:{
+            slidesPerView: 2,
+        },
         1600: {
             slidesPerView: 3,
         }
@@ -23,6 +28,7 @@ swiper = new Swiper(".mySwiper", {
     });
 
 
+    
 heartReact.forEach(each => {
     each.addEventListener("click", () => {
         each.classList.toggle('reacted')
@@ -31,50 +37,49 @@ heartReact.forEach(each => {
 
 
 closeArrow.addEventListener('click', () => {
-    searchSection.classList.add('fullScreen')
-    tourSec.classList.add('fullScreen')
-    openRecom.classList.add('fullScreen')
 
+    body.classList.add('fullScreen')
     galleryGrid.style.gridTemplateColumns = "1fr 1fr 1fr"
 
-    swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
+    dealsItem3.style.display = "flex"
 
-    if(document.body.clientWidth <= 1600){
+    dealsItem.forEach(item => {
+        item.style.height = '240px'
+        item.style.width = "32.5%" 
+    })
+
+    if(document.body.clientWidth >= 1100) mySwiper.style.height = '300px'
+
+    if(document.body.clientWidth >= 1600){
         gridItem.forEach(each => {
-            each.style.height = '200px'
+            each.style.height = '230px'
         })
     }
+
 })
 
 openRecom.addEventListener('click', () => {
-    searchSection.classList.remove('fullScreen')
-    tourSec.classList.remove('fullScreen')
-    openRecom.classList.remove('fullScreen')
+    
+    body.classList.remove('fullScreen')
 
-    if(document.body.clientWidth <= 1600){
-        galleryGrid.style.gridTemplateColumns = "1fr 1fr"
-    }
+    galleryGrid.style.gridTemplateColumns = "1fr 1fr"
 
-    swiper = new Swiper(".mySwiper", {
-        slidesPerView: 2,
-        spaceBetween: 20,
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
+    dealsItem3.style.display = "none"
 
-    if(document.body.clientWidth <= 1600){
+    dealsItem.forEach(item => {
+        item.style.height = '220px'
+        item.style.width = "48%"
+    })
+    
+    if(document.body.clientWidth >= 1100) mySwiper.style.height = '200px'
+
+    if(document.body.clientWidth >= 1600){
         gridItem.forEach(each => {
-            each.style.height = '150px'
+            each.style.height = '200px'
         })
-    }
+    } 
+
+
 })
+
 
