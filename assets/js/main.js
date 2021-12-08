@@ -49,6 +49,12 @@ closeArrow.addEventListener('click', () => {
     })
 
     if(document.body.clientWidth >= 1100) mySwiper.style.height = '300px'
+    
+    if(document.body.clientWidth <= 1600) {
+        gridItem.forEach(each => {
+            each.style.height = '250px'
+        })
+    }
 
     if(document.body.clientWidth >= 1600){
         gridItem.forEach(each => {
@@ -72,6 +78,12 @@ openRecom.addEventListener('click', () => {
     })
     
     if(document.body.clientWidth >= 1100) mySwiper.style.height = '200px'
+
+    if(document.body.clientWidth <= 1600) {
+        gridItem.forEach(each => {
+            each.style.height = '150px'
+        })
+    }
 
     if(document.body.clientWidth >= 1600){
         gridItem.forEach(each => {

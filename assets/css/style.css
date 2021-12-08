@@ -8,6 +8,16 @@
   font-family: sans-serif;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif;
+}
+
 header {
   width: 9%;
   height: 100vh;
@@ -161,6 +171,12 @@ body.fullScreen .searchSection {
   padding-right: 1%;
 }
 
+@media screen and (max-width: 1100px) {
+  body.fullScreen .searchSection {
+    padding-right: 0;
+  }
+}
+
 body.fullScreen .tourSec {
   right: -50%;
 }
@@ -231,6 +247,7 @@ main {
   height: 100%;
   background-color: #EBEDFF;
   padding-left: 20px;
+  padding-right: 20px;
   border: none;
 }
 
@@ -336,7 +353,7 @@ main {
   width: 100%;
   height: 100%;
   opacity: 0.5;
-  border-radius: 19px;
+  border-radius: 10px 10px 0 0;
   background-color: #111;
 }
 
@@ -502,7 +519,7 @@ main {
 
 @media screen and (max-width: 615px) {
   .dealsItem:nth-child(3) {
-    display: unset;
+    display: block !important;
   }
 }
 
@@ -649,7 +666,7 @@ main {
 
 @media screen and (max-width: 1100px) {
   .gridItem {
-    height: 250px;
+    height: 250px !important;
   }
 }
 
@@ -964,6 +981,16 @@ main {
   .openRecom {
     display: none !important;
   }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 footer {
