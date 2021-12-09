@@ -207,7 +207,6 @@ main {
   height: 100%;
   padding-right: 45%;
   padding-left: 9%;
-  border-top-right-radius: 10%;
   -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
 }
@@ -289,19 +288,14 @@ main {
   }
 }
 
-.title h2 {
-  font-size: 20px;
-  color: #221F3C;
-}
-
-@media screen and (max-width: 1100px) {
-  .title h2 {
+@media screen and (max-width: 1100px) and (max-width: 1100px) {
+  .title {
     font-size: 22px;
   }
 }
 
-@media screen and (max-width: 450px) {
-  .title h2 {
+@media screen and (max-width: 1100px) and (max-width: 450px) {
+  .title {
     font-size: 16px;
   }
 }
@@ -398,7 +392,7 @@ main {
 }
 
 .heartReact path {
-  fill: #F5B7B1;
+  fill: #E091A6;
 }
 
 .heartReact path.reacted {
