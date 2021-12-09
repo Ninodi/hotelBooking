@@ -100,6 +100,7 @@ main
         grid-template-columns: 1fr 1fr
     @include max615()
         grid-template-columns: 1fr
+        grid-gap: 30px
 
 .gridItem
     width: 100%
@@ -117,6 +118,10 @@ main
         margin-right: 3px
         box-shadow: 0 0 6px #000000
         color: #2D3DDF
+        @include max615()
+            width: 100px
+            height: 40px
+            font-size: 14px
 
 
 .img    
@@ -185,6 +190,8 @@ main
     display: flex
     flex-direction: column
     justify-content: space-around
+    @include max615()
+        font-size: 14px
 
 .recommendation
     width: 24%

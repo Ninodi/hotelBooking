@@ -327,6 +327,7 @@ main {
   .grid {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+    grid-gap: 30px;
   }
 }
 
@@ -354,6 +355,14 @@ main {
   -webkit-box-shadow: 0 0 6px #000000;
           box-shadow: 0 0 6px #000000;
   color: #2D3DDF;
+}
+
+@media screen and (max-width: 615px) {
+  .gridItem a {
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+  }
 }
 
 .img {
@@ -456,6 +465,12 @@ main {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+@media screen and (max-width: 615px) {
+  .infoTxt {
+    font-size: 14px;
+  }
 }
 
 .recommendation {
