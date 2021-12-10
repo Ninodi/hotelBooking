@@ -594,6 +594,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 20%;
 }
 
 * {

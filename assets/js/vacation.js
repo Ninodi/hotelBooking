@@ -7,18 +7,18 @@ let previous = document.querySelectorAll('.prev')
 
 next.forEach(nxt => {
     nxt.addEventListener('click', () => {
-        nxt.closest('.gridItem').querySelector('.prev').style.display = 'flex'
+        nxt.parentElement.querySelector('.prev').style.display = 'flex'
         nxt.style.display = 'none'
-        nxt.closest('.gridItem').querySelector('.img2').classList.add('switch')
+        nxt.parentElement.querySelector('.img2').classList.add('switch')
     })
 })
 
 previous.forEach(prev => {
     prev.style.display = 'none'
     prev.addEventListener('click', () => {
-        prev.closest('.gridItem').querySelector('.next').style.display = 'flex'
+        prev.parentElement.querySelector('.next').style.display = 'flex'
         prev.style.display = 'none'
-        prev.closest('.gridItem').querySelector('.img2').classList.remove('switch')
+        prev.parentElement.querySelector('.img2').classList.remove('switch')
     })
 })
 
