@@ -616,7 +616,7 @@ main {
   border-radius: 4px;
   border: 1px solid #2D3DDF;
   color: #2D3DDF;
-  z-index: 2;
+  z-index: 4;
   cursor: pointer;
 }
 
