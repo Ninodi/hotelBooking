@@ -272,17 +272,36 @@ main
     align-items: center
     position: fixed
     bottom: 30px
-    right: 0
-    transform: translateX(-50%)
+    right: 30px
+    // transform: translateX(-50%)
     background-color: #FFF
     border-radius: 4px
     border: 1px solid #2D3DDF
     color: #2D3DDF
     z-index: 2
     cursor: pointer
+    span
+        @include max760()
+            display: none
+    @include max760()
+        border-radius: 50%
+        width: 60px
+        height: 60px
+    @include max375()
+        width: 50px
+        height: 50px  
+        right: 20px      
+
+
+.mobScroll
+    display: none
+    @include max760()
+        display: unset
 
 
 @import footer
 
 .footerContainer
     padding-right: 0
+
+    
