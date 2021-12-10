@@ -1,7 +1,6 @@
-let img1 = document.querySelectorAll('.img1')
-let img2 = document.querySelectorAll('.img2')
 let next = document.querySelectorAll('.next')
 let previous = document.querySelectorAll('.prev')
+let scroll = document.querySelector('.scroll')
 
 
 
@@ -22,3 +21,9 @@ previous.forEach(prev => {
     })
 })
 
+scroll.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })
+})

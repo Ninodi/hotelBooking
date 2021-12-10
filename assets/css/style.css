@@ -317,6 +317,18 @@ main {
   }
 }
 
+@media screen and (max-width: 615px) {
+  .title h2 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 485px) {
+  .title h2 {
+    font-size: 16px;
+  }
+}
+
 .popularSwiper {
   width: 100%;
   height: -webkit-max-content;
